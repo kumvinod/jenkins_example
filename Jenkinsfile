@@ -1,9 +1,12 @@
 pipeline{
   agent any
+  environment{
+    Tool='Jenkins'
+  }
   stages{
-    stage("test"){
+    stage("Git Scenario"){
       steps{
-        echo "Hello from Github"
+        echo "\n Hello World $Tool\n\n\n\n"
        }
      }
    }
