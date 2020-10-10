@@ -1,13 +1,21 @@
 pipeline{
   agent any
-  environment{
-    Tool='Jenkins'
-  }
   stages{
-    stage("Git Scenario"){
-      steps{
-        echo "\n Hello World $Tool\n\n\n\n"
-       }
-     }
-   }
+		stage("Build Stage"){
+			when{
+				changelog 'Build'
+			}
+			steps{
+				echo "Yes,change log contains hello message..."
+			}
+		}
+		stage("Deploy Stage"){
+			when{
+				changelog 'Deploy'
+			}
+			steps{
+				echo 'This stage will use for Deploy'
+			}
+		}
+	}
 }
