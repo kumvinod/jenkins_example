@@ -6,7 +6,7 @@ pipeline{
 				changelog 'Build'
 			}
 			steps{
-				echo "Yes,change log contains hello message..."
+				echo "Yes,change log contains build message..."
 			}
 		}
 		stage("Deploy Stage"){
